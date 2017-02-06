@@ -1,0 +1,18 @@
+{
+    "contents" : "library(ggplot2)\nlibrary(shinydashboard)\n\nui <- dashboardPage(\n  dashboardHeader(title = \"Basic dashboard\"),\n  dashboardSidebar(\n    sidebarMenu(\n      menuItem(\"Dashboard\", tabName = \"dashboard\", icon = icon(\"dashboard\"))\n\n    )\n  ),\n  dashboardBody(\n    tabItems(\n      # First tab content\n      tabItem(tabName = \"dashboard\",\n              fluidRow(\n                box(title = \"choose a predictor for Miles per gallon in the mtcars dataset to assert which is the best candidate\" ),\n                box(\n                  title = \"Choose predictor\",\n                  selectInput(\"variable\", \"Variable:\",\n                              c(\"weight\" = \"wt\",\n                                \"Transmission\" = \"am\",\n                                \"Gears\" = \"gear\"))\n                  \n                ),\n                box(plotOutput(\"plot2\", height = 250))\n              )\n      )\n      )\n)\n)\n\nserver <- function(input, output) {\n  output$plot2 <- renderPlot({\n    dat <- mtcars\n    \n    ggplot(dat, aes_string(input$variable, \"mpg\" )) + geom_point() \n  })\n}\n\nshinyApp(ui, server)",
+    "created" : 1486407767005.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2073589135",
+    "id" : "553D1212",
+    "lastKnownWriteTime" : 1486410488,
+    "path" : "F:/R-Programming/data-products-course-project/app.r",
+    "project_path" : "app.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

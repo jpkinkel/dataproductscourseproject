@@ -1,0 +1,17 @@
+{
+    "contents" : "presentation\n========================================================\nauthor: Joost Kinkel  \ndate: februari 5, 2017\n\nMPG as a predictor for weight\n========================================================\n\nAcme company is interested in investigating whether transmission-type is a good predictor for MPG for a car.\n\n- Use MtCars dataset\n- Supply a decent argumentation whether or not the said statement holds true\n\n\nData transformation\n========================================================\n\nfirst use transmission as a factor.\n\n```{r}\ncarsData <- mtcars\ncarsData$am <- as.factor(mtcars$am)\nlevels(carsData$am) <- c(\"automatic\", \"manual\")\n```\n\n\nSlide With Plot\n========================================================\n\n```{r, echo=FALSE}\nplot(cars)\n```\n",
+    "created" : 1486410200109.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2019960917",
+    "id" : "4871E1F6",
+    "lastKnownWriteTime" : 1486410672,
+    "path" : "F:/R-Programming/data-products-course-project/presentation.Rpres",
+    "project_path" : "presentation.Rpres",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_presentation"
+}
