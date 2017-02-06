@@ -24,9 +24,33 @@ levels(carsData$am) <- c("automatic", "manual")
 ```
 
 
-Slide With Plot
+relationship between transmission-type and mpg
 ========================================================
 
+To get a feel for the relationship, here is a boxplot:
+
 ```{r, echo=FALSE}
-plot(cars)
+plot(x = carsData$am, y = carsData$mpg)
 ```
+
+
+relationship between MPG and weight
+========================================================
+
+Intuitively it feels that weight might be a better predictor. Is it so? Let 's look at the relationship between weight and mpg.
+
+```{r, echo=FALSE}
+plot(x = carsData$wt, y = carsData$mpg)
+```
+
+Correlation
+========================================================
+
+We have a established that there might be a relationship between transmission-type and mpg. But there are more variables at play. How do they influence mpg? Let 's see how all variables correlate to mpg:
+
+```{r}
+cor(mtcars)[1,]
+```
+
+The variable mostly correlated to mpg is wt (weight). This is what one would expect. The heavier a car, the more energy it needs for 1 mile.
+

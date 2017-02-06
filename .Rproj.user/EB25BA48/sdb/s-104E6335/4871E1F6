@@ -1,12 +1,12 @@
 {
-    "contents" : "presentation\n========================================================\nauthor: Joost Kinkel  \ndate: februari 5, 2017\n\nMPG as a predictor for weight\n========================================================\n\nAcme company is interested in investigating whether transmission-type is a good predictor for MPG for a car.\n\n- Use MtCars dataset\n- Supply a decent argumentation whether or not the said statement holds true\n\n\nData transformation\n========================================================\n\nfirst use transmission as a factor.\n\n```{r}\ncarsData <- mtcars\ncarsData$am <- as.factor(mtcars$am)\nlevels(carsData$am) <- c(\"automatic\", \"manual\")\n```\n\n\nSlide With Plot\n========================================================\n\n```{r, echo=FALSE}\nplot(cars)\n```\n",
+    "contents" : "presentation\n========================================================\nauthor: Joost Kinkel  \ndate: februari 5, 2017\n\nMPG as a predictor for weight\n========================================================\n\nAcme company is interested in investigating whether transmission-type is a good predictor for MPG for a car.\n\n- Use MtCars dataset\n- Supply a decent argumentation whether or not the said statement holds true\n\n\nData transformation\n========================================================\n\nfirst use transmission as a factor.\n\n```{r}\ncarsData <- mtcars\ncarsData$am <- as.factor(mtcars$am)\nlevels(carsData$am) <- c(\"automatic\", \"manual\")\n```\n\n\nrelationship between transmission-type and mpg\n========================================================\n\nTo get a feel for the relationship, here is a boxplot:\n\n```{r, echo=FALSE}\nplot(x = carsData$am, y = carsData$mpg)\n```\n\n\nrelationship between MPG and weight\n========================================================\n\nIntuitively it feels that weight might be a better predictor. Is it so? Let 's look at the relationship between weight and mpg.\n\n```{r, echo=FALSE}\nplot(x = carsData$wt, y = carsData$mpg)\n```\n\nCorrelation\n========================================================\n\nWe have a established that there might be a relationship between transmission-type and mpg. But there are more variables at play. How do they influence mpg? Let 's see how all variables correlate to mpg:\n\n```{r}\ncor(mtcars)[1,]\n```\n\nThe variable mostly correlated to mpg is wt (weight). This is what one would expect. The heavier a car, the more energy it needs for 1 mile.\n\n",
     "created" : 1486410200109.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2019960917",
+    "hash" : "2990242611",
     "id" : "4871E1F6",
-    "lastKnownWriteTime" : 1486410672,
+    "lastKnownWriteTime" : 1486411353,
     "path" : "F:/R-Programming/data-products-course-project/presentation.Rpres",
     "project_path" : "presentation.Rpres",
     "properties" : {
